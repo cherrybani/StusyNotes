@@ -173,8 +173,22 @@
 
   <!-- end info_section -->
 
+  <!-- SCRIPT LOCAL STORAGE -->
+  <script>
+    const note = document.getElementById('noteInput');
+
+    // load isi
+    note.value = localStorage.getItem('myNote') || "";
+
+    // auto save
+    note.addEventListener('input', () => {
+      localStorage.setItem('myNote', note.value);
+    });
+  </script>
+  
   <script src="custom.js"></script>
 
 </body>
+
 
 </html>
